@@ -108,7 +108,7 @@ body {
 
 .bmw-btn {
     background-color: #a703af;
-    color: #dfdfdf;
+    color: #dfdfdf !important;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -240,6 +240,13 @@ body {
     height: 50px;
 }
 
+.bmw-btn a, .porsche-btn a {
+  color: inherit;
+  text-decoration: none; 
+  font-weight: inherit;
+  font-family: inherit;
+}
+
 @media (max-width: 750px) {
     .hamburguer {
         display: block;
@@ -306,5 +313,4 @@ body {
         transform: rotate(-135deg);
         top: -7px;
     }
-
 }

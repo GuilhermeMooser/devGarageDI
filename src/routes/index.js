@@ -14,7 +14,7 @@ function RoutesApp(){
     <Routes>
       <Route path="/" element={<SignIn />} />
       <Route path="/cadastro" element={<SignUp />} />
-      <Route path="/home" element={<Home/>} />
+      <Route path="/home" element={<Private><Home/></Private>} />
       <Route path="/comunidade" element={<Private><Comunidade/></Private>} />
       <Route path="/bmw" element={<Private><BMW /></Private>} />
       <Route path="/porsche" element={<Private><PORSCHE/></Private>} />
