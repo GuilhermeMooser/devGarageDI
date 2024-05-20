@@ -1,3 +1,5 @@
+/**
+
 // Inicialize o Firestore
 import { db } from '../../services/firebaseConnection';
 
@@ -65,4 +67,4 @@ function deletarCarro(carroId) {
   }
   
   // Exemplo de uso:
-  deletarCarro("ID_DO_CARRO");
+  deletarCarro("ID_DO_CARRO"); */

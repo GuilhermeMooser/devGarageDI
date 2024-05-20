@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.header {
+    background-image: linear-gradient(
+        to right, black, #221133 );
+        padding-inline: 16px;
+}
+
+.nav {
+    max-width: 1280px;
+    height: 70px;
+    margin-inline: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-list a {
+    font-size: 18px;
+    color: #dfdfdf;
+    padding-block: 16px;
+}
+
+.nav-list a:hover {
+    color: #a703af;
+}
+
+.hamburguer {
+    display: none;
+    border: none;
+    background: none;
+    border-top: 3px solid #dfdfdf;
+    cursor: pointer;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #dfdfdf;
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+body {
+    background-image: linear-gradient(
+        to right, black, #221133
+    );
+}
+
+/* bmw */
+.bmw {
+    padding-top: 8rem;
+}
+
+.bmw-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 5%;
+}
+
+.bmw-details {
+    text-align: left;
+    padding: 20px;
+    flex: 1;
+    max-width: 50%;
+}
+
+.bmw-details h2 {
+    color: #a703af;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 48px;
+    padding-bottom: 30px;
+}
+
+.bmw-details p {
+    font-size: 16px;
+    color: #dfdfdf;
+    font-family: Poppins;
+    padding-bottom: 30px;
+}
+
+.bmw-btn {
+    background-color: #a703af;
+    color: #dfdfdf;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Poppins;
+    font-size: 16px;
+}
+
+.bmw-btn:hover {
+    background-color: transparent;
+    border: 1px solid #a703af;
+}
+
+.bmw-image {
+    padding: 20px;
+    flex: 1;
+    text-align: right;
+    max-width: 50%;
+}
+
+.bmw-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* porsche */
+.porsche {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.porsche-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 5%;
+}
+
+.porsche-details {
+    text-align: left;
+    padding: 20px;
+    flex: 1;
+    max-width: 50%;
+}
+
+.porsche-details h2 {
+    color: #a703af;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 48px;
+    padding-bottom: 30px;
+}
+
+.porsche-details p {
+    font-size: 16px;
+    color: #dfdfdf;
+    font-family: Poppins;
+    padding-bottom: 30px;
+}
+
+.porsche-btn {
+    background-color: #a703af;
+    color: #dfdfdf;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Poppins;
+    font-size: 16px;
+}
+
+.porsche-btn:hover {
+    background-color: transparent;
+    border: 1px solid #a703af;
+}
+
+.porsche-image {
+    padding: 20px;
+    flex: 1;
+    text-align: right;
+    max-width: 50%;
+}
+
+.porsche-image img {
+    width: 100%;
+    height: auto;
+}
+
+.final {
+    border-top: 1px solid #a703af;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.final-details {
+    text-align: center;
+}
+
+.final-details h2{
+    font-family: Poppins;
+    color: #a703af;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.final-details p{
+    font-family: Poppins;
+    color: #777777;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.final-img {
+    margin-right: 200px;
+}
+
+.final-img img {
+    display: block;
+    width: 200px;
+    height: 50px;
+}
+
+@media (max-width: 750px) {
+    .hamburguer {
+        display: block;
+        z-index: 1;
+    }
+
+    .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(
+            to right, #101010, #391d55);
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+        pointer-events: none;
+    }
+
+    .nav-list a {
+        font-size: 24px;
+        opacity: 0;
+    }
+
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.6s;
+    }
+
+    /* estilos ativos */
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+        pointer-events: all;
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+    }
+
+    .nav.active .hamburguer {
+        position: fixed;
+        top: 26px;
+        right: 16px;
+        border-top-color: transparent;
+    }
+
+    .nav.active .hamburguer::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+}
