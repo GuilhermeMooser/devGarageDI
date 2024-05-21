@@ -12,7 +12,7 @@ export default function Header() {
     return(
         <header className="header">
         <nav className="nav">
-            <a href="/" className="logo"><img src={imgLogo} alt="logo"></img></a>
+            <a href="/home" className="logo"><img src={imgLogo} alt="logo"></img></a>
             <button className="hamburguer"></button>
             <ul className="nav-list">
                 <li><Link to="/bmw">BMW</Link></li>

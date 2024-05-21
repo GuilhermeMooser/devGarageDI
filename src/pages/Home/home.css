@@ -247,6 +247,24 @@ body {
   font-family: inherit;
 }
 
+h1 {
+    color: #a703af;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 70px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.borderMarca {
+    border-bottom: 1px solid #a703af;
+}
+
+
 @media (max-width: 750px) {
     .hamburguer {
         display: block;

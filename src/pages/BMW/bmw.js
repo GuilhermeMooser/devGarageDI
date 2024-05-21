@@ -1,70 +1,62 @@
-/**
+import Header from "../../components/Header/header"
+import Footer from "../../components/Footer/footer"
+import { Helmet } from 'react-helmet';
 
-// Inicialize o Firestore
-import { db } from '../../services/firebaseConnection';
+import  '../Home/home.css';
 
-// Função para obter carros por marca
-function obterCarrosPorMarca(marca) {
-  db.collection("carros")
-    .where("marca", "==", marca)
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
-        // Aqui você pode processar os dados como necessário
-      });
-    })
-    .catch((error) => {
-      console.log("Erro ao obter documentos: ", error);
-    });
+import React, { useEffect, useState } from 'react';
+import { obterCarrosPorMarca } from '../../services/carService';
+
+export default function BMW() {
+
+  const [bmwCars, setBmwCars] = useState([]);
+
+  useEffect(() => {
+    const fetchCars = async () => {
+      const cars = await obterCarrosPorMarca('BMW');
+      setBmwCars(cars);
+    };
+
+    fetchCars();
+  }, []);
+
+  return(
+    <>
+      <Helmet>
+          <title>DevGarage</title>
+          <meta charSet="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link rel="stylesheet" href="./home.css" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+          <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+          
+      </Helmet>
+      <Header />
+
+      <div>
+        <h1 className="borderMarca">BMW</h1>
+      <ul>
+        {bmwCars.map(car => (
+          <section className="bmw" id="bmw">
+            <li key={car.id}>
+              <div className="bmw-content">
+              <div className="bmw-image">
+                        <img src={car.img} alt="BMW"></img>
+                  </div>
+                  <div className="bmw-details">
+                      <h2>{car.modelo}</h2>
+                      <p>{car.descricao}</p>
+                  </div>
+              </div>
+            </li>
+          </section>
+        ))}
+      </ul>
+    </div>
+
+      
+      <Footer />
+    </>
+  );
 }
-
-// Chame a função passando a marca desejada, por exemplo "BMW"
-obterCarrosPorMarca("BMW");
-
-function adicionarCarro(carro) {
-    db.collection("carros").add(carro)
-      .then((docRef) => {
-        console.log("Documento escrito com ID: ", docRef.id);
-      })
-      .catch((error) => {
-        console.error("Erro ao adicionar documento: ", error);
-      });
-  }
-  
-  // Exemplo de uso:
-  adicionarCarro({
-    marca: "BMW",
-    modelo: "X5",
-    ano: 2020,
-    cor: "Azul"
-  });
-
-function atualizarCarro(carroId, novosDados) {
-db.collection("carros").doc(carroId).update(novosDados)
-    .then(() => {
-    console.log("Documento atualizado com sucesso!");
-    })
-    .catch((error) => {
-    console.error("Erro ao atualizar documento: ", error);
-    });
-}
-
-// Exemplo de uso:
-atualizarCarro("ID_DO_CARRO", {
-cor: "Preto",
-ano: 2021
-});
-
-function deletarCarro(carroId) {
-    db.collection("carros").doc(carroId).delete()
-      .then(() => {
-        console.log("Documento deletado com sucesso!");
-      })
-      .catch((error) => {
-        console.error("Erro ao deletar documento: ", error);
-      });
-  }
-  
-  // Exemplo de uso:
-  deletarCarro("ID_DO_CARRO"); */

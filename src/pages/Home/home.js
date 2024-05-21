@@ -1,5 +1,6 @@
 import Header from "../../components/Header/header"
 import Footer from "../../components/Footer/footer"
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import {Link} from 'react-router-dom';
@@ -10,6 +11,13 @@ import imgBmw from '../../assets/imgs/58042-car-coupe-m6-bmw-m3-m2-white.png'
 import imgPorsche from '../../assets/imgs/porsche.png'
 
 export default function Home() { 
+    const  navigate = useNavigate();
+
+    const goToBMW = () => {
+        navigate('/bmw');
+    };
+
+
     return (
     <>
        <Helmet>
@@ -28,7 +36,7 @@ export default function Home() {
                     <div className="bmw-details">
                         <h2>BMW: Inovação em Movimento</h2>
                         <p>Fundada em 1916, a BMW é uma das marcas mais respeitadas no mundo automotivo. Conhecida por seu compromisso com a engenharia de precisão e o desempenho, a BMW sempre esteve na vanguarda da tecnologia. Com uma linha de veículos que abrange desde sedãs luxuosos até SUVs esportivos, a BMW continua a definir o padrão de excelência e inovação no setor automotivo.</p>
-                        <button className="bmw-btn"><Link to="/bmw">Saber mais</Link></button>
+                        <button className="bmw-btn" onClick={goToBMW}>Saber mais</button>
                     </div>
                     <div className="bmw-image">
                         <img src={imgBmw} alt="BMW"></img>
