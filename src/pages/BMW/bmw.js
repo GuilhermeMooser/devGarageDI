@@ -36,9 +36,13 @@ export default function BMW() {
 
       <div>
         <h1 className="borderMarca">BMW</h1>
+        <div className="adjustBtnAdd">
+          <button className="porsche-btn">Adicionar</button>
+        </div>
+        
       <ul>
         {bmwCars.map(car => (
-          <section className="bmw" id="bmw">
+          <section className="bmw adjustAddBMW" id="bmw">
             <li key={car.id}>
               <div className="bmw-content">
               <div className="bmw-image">
@@ -54,8 +58,6 @@ export default function BMW() {
         ))}
       </ul>
     </div>
-
-      
       <Footer />
     </>
   );
