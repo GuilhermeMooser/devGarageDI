@@ -17,7 +17,7 @@ export default function Header() {
             <ul className="nav-list">
                 <li><Link to="/bmw">BMW</Link></li>
                 <li><Link to="/porsche">Porsche</Link></li>
-                <li><Link to="/comunidade">Comunidade</Link></li>
+                <li><Link to="/home">Home</Link></li>
                 <li><Link onClick={ () => logout() }>Sair</Link></li>
             </ul>
         </nav>
