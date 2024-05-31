@@ -292,13 +292,17 @@ h1 {
   }
   
 .modal-overlay-edit .modal-content {
-    background-color: #793fab;
+    background-image: linear-gradient(to right, #221133, black);
     padding: 20px;
     border-radius: 8px;
     min-width: 40%;
     overflow: auto;
     position: relative;
     margin-bottom: 100px;
+}
+
+.modal-content h2, label {
+    color: white;
 }
 
 .close-edit {
@@ -308,7 +312,10 @@ h1 {
     cursor: pointer;
     font-weight: bold;
     font-size: 30px;
+    color: white;
 }
+
+
 
 .form-container {
     display: flex;
